@@ -224,10 +224,9 @@ class MenuActivity : AppCompatActivity(), CekSaldoView, TransaksiPulsaView {
                 val pwd = prefsprivate!!.getString("PASSWORD", "")
                 val kodeagens = prefsprivate!!.getString("KODEAGENT", "")
 
-                if (str_denom.equals("") || str_denom.equals("PILIH DENOM")) {
+                if (str_denom.equals("") || str_denom.equals("0")) {
                     getdialogerror("Harap Pilih Denom!")
                 } else {
-
                     val transaction = Transaction(namas, pwd, kodeagens, no_tlp, str_denom)
                     transaksiPulsaPresenter!!.doTransaksi(transaction)
                 }
