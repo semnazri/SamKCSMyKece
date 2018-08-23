@@ -58,22 +58,34 @@ class MenuActivity : AppCompatActivity(), CekSaldoView, TransaksiPulsaView {
         cekSaldoPresenter = CekSaldoPresenterImp(this)
         transaksiPulsaPresenter = TransaksiPulsaPresenterImp(this)
 
-        btn_cek_saldo.setOnClickListener(View.OnClickListener {
+        btn_cek_saldo.setOnClickListener {
             checkConnection("1", "0", "00")
 
-        })
+        }
 
-        btn_hbp.setOnClickListener(View.OnClickListener {
+        btn_hbp.setOnClickListener {
             val intent = Intent(this, DaftarHargaActivity::class.java)
             startActivity(intent)
-        })
+        }
 
-        btn_transaksi_harian.setOnClickListener(View.OnClickListener {
+        btn_transaksi_harian.setOnClickListener {
             val intent = Intent(this, TransaksiHarianActivity::class.java)
             startActivity(intent)
-        })
+        }
 
-        btn_beli_pulsa.setOnClickListener(View.OnClickListener {
+        btn_logout.setOnClickListener {
+
+            val editor = prefsprivate!!.edit()
+            editor.clear()
+            editor.commit()
+
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+
+
+        }
+        btn_beli_pulsa.setOnClickListener {
             val builder = Dialog(this)
             builder.requestWindowFeature(Window.FEATURE_NO_TITLE)
             builder.setContentView(R.layout.dialog_transaksi_pulsa)
@@ -86,7 +98,7 @@ class MenuActivity : AppCompatActivity(), CekSaldoView, TransaksiPulsaView {
                     if (s.count() > 3) {
 
 
-                        if (s.contains("0811") || s.contains("0812") || s.contains("0813") || s.contains("0852") || s.contains("0853")|| s.contains("0821")) {
+                        if (s.contains("0811") || s.contains("0812") || s.contains("0813") || s.contains("0852") || s.contains("0853") || s.contains("0821")) {
                             denom.clear()
                             telkomsel()
                         } else if (s.contains("0814") || s.contains("0815") || s.contains("0816") || s.contains("0855") || s.contains("0856") || s.contains("0857") || s.contains("0858")) {
@@ -136,7 +148,7 @@ class MenuActivity : AppCompatActivity(), CekSaldoView, TransaksiPulsaView {
             })
 
             builder.show()
-        })
+        }
 
     }
 

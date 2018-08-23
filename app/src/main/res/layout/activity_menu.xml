@@ -45,9 +45,9 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <Button
@@ -77,6 +77,17 @@
                 android:textColor="#ffffff" />
         </LinearLayout>
 
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_button"
+            android:padding="10dp"
+            android:text="Logout"
+            android:textColor="#ffffff" />
     </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>
