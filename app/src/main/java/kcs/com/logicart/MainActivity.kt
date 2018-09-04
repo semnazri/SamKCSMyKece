@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity(), CekSaldoView {
     override fun ResultCekSaldo(response_message: String, authResponse: AuthResponse) {
 
 
-        if (authResponse!!.message.toString().equals("Berhasil")) {
+        if (authResponse!!.status.toString().equals("00")) {
             to_menuActivity()
             Toast.makeText(this, "Selamat Datang " + username, Toast.LENGTH_SHORT).show()
             val editor = prefsprivate!!.edit()
@@ -84,6 +84,8 @@ class MainActivity : AppCompatActivity(), CekSaldoView {
                 editor.putString("KODEAGENT", kodeagen)
                 editor.apply()
             }
+        }else if (authResponse!!.status.toString().equals("02")){
+            getdialogerror(authResponse!!.message.toString())
         }
     }
 
