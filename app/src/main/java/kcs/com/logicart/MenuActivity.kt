@@ -98,16 +98,19 @@ class MenuActivity : AppCompatActivity(), CekSaldoView, TransaksiPulsaView {
                     if (s.count() > 3) {
 
 
-                        if (s.contains("0811") || s.contains("0812") || s.contains("0813") || s.contains("0852") || s.contains("0853") || s.contains("0821")) {
+                        if (s.contains("0811") || s.contains("0812") || s.contains("0813") || s.contains("0821") || s.contains("0822") || s.contains("0823")|| s.contains("0851")|| s.contains("0852")|| s.contains("0853")) {
                             denom.clear()
                             telkomsel()
                         } else if (s.contains("0814") || s.contains("0815") || s.contains("0816") || s.contains("0855") || s.contains("0856") || s.contains("0857") || s.contains("0858")) {
                             denom.clear()
                             indosat()
-                        } else if (s.contains("0898") || s.contains("0899") || s.contains("0896")) {
+                        } else if (s.contains("0817") || s.contains("0818") || s.contains("0819")|| s.contains("0859")|| s.contains("0877")|| s.contains("0878")|| s.contains("0838")|| s.contains("0831")|| s.contains("0832")|| s.contains("0833")) {
+                            denom.clear()
+                            xl()
+                        }else if (s.contains("0898") || s.contains("0899") || s.contains("0896")|| s.contains("0897")) {
                             denom.clear()
                             three()
-                        } else if (s.contains("0881") || s.contains("0887")) {
+                        } else if (s.contains("0881") || s.contains("0882")|| s.contains("0883")|| s.contains("0884")|| s.contains("0885")|| s.contains("0886")|| s.contains("0887")) {
                             denom.clear()
                             smartfren()
                         } else {
@@ -154,22 +157,35 @@ class MenuActivity : AppCompatActivity(), CekSaldoView, TransaksiPulsaView {
 
     fun telkomsel() {
         denom.add(Denom("PILIH DENOM", "0"))
+        denom.add(Denom("1.000", "1"))
+        denom.add(Denom("2.000", "2"))
+        denom.add(Denom("3.000", "3"))
+        denom.add(Denom("5.000", "5"))
         denom.add(Denom("10.000", "10"))
         denom.add(Denom("20.000", "20"))
         denom.add(Denom("25.000", "25"))
+        denom.add(Denom("30.000", "30"))
+        denom.add(Denom("35.000", "35"))
+        denom.add(Denom("40.000", "40"))
+        denom.add(Denom("45.000", "45"))
         denom.add(Denom("50.000", "50"))
+        denom.add(Denom("55.000", "55"))
+        denom.add(Denom("60.000", "60"))
+        denom.add(Denom("65.000", "65"))
+        denom.add(Denom("70.000", "70"))
+        denom.add(Denom("75.000", "75"))
+        denom.add(Denom("80.000", "80"))
+        denom.add(Denom("85.000", "85"))
+        denom.add(Denom("90.000", "90"))
         denom.add(Denom("100.000", "100"))
+        denom.add(Denom("150.000", "150"))
+        denom.add(Denom("200.000", "200"))
+        denom.add(Denom("300.000", "300"))
+        denom.add(Denom("500.000", "500"))
+        denom.add(Denom("1.000.000", "1000"))
     }
 
     fun indosat() {
-        denom.add(Denom("PILIH DENOM", "0"))
-        denom.add(Denom("20.000", "20"))
-        denom.add(Denom("30.000", "30"))
-        denom.add(Denom("50.000", "50"))
-        denom.add(Denom("100.000", "100"))
-    }
-
-    fun three() {
         denom.add(Denom("PILIH DENOM", "0"))
         denom.add(Denom("5.000", "5"))
         denom.add(Denom("10.000", "10"))
@@ -178,16 +194,55 @@ class MenuActivity : AppCompatActivity(), CekSaldoView, TransaksiPulsaView {
         denom.add(Denom("30.000", "30"))
         denom.add(Denom("50.000", "50"))
         denom.add(Denom("100.000", "100"))
+    }
+
+    fun three() {
+        denom.add(Denom("PILIH DENOM", "0"))
+        denom.add(Denom("1.000", "1"))
+        denom.add(Denom("2.000", "2"))
+        denom.add(Denom("3.000", "3"))
+        denom.add(Denom("5.000", "5"))
+        denom.add(Denom("6.000", "6"))
+        denom.add(Denom("7.000", "7"))
+        denom.add(Denom("8.000", "8"))
+        denom.add(Denom("9.000", "9"))
+        denom.add(Denom("10.000", "10"))
+        denom.add(Denom("20.000", "20"))
+        denom.add(Denom("25.000", "25"))
+        denom.add(Denom("30.000", "30"))
+        denom.add(Denom("40.000", "40"))
+        denom.add(Denom("50.000", "50"))
+        denom.add(Denom("75.000", "75"))
+        denom.add(Denom("100.000", "100"))
         denom.add(Denom("150.000", "150"))
     }
 
     fun smartfren() {
         denom.add(Denom("PILIH DENOM", "0"))
+        denom.add(Denom("5.000", "5"))
+        denom.add(Denom("10.000", "10"))
+        denom.add(Denom("20.000", "20"))
+        denom.add(Denom("25.000", "25"))
+        denom.add(Denom("30.000", "30"))
+        denom.add(Denom("50.000", "50"))
+        denom.add(Denom("60.000", "60"))
+        denom.add(Denom("75.000", "75"))
+        denom.add(Denom("100.000", "100"))
+        denom.add(Denom("150.000", "150"))
+        denom.add(Denom("200.000", "200"))
+        denom.add(Denom("300.000", "300"))
+        denom.add(Denom("500.000", "500"))
+    }
+
+    fun xl(){
+        denom.add(Denom("PILIH DENOM", "0"))
+        denom.add(Denom("5.000", "5"))
+        denom.add(Denom("10.000", "10"))
+        denom.add(Denom("15.000", "15"))
         denom.add(Denom("25.000", "25"))
         denom.add(Denom("30.000", "30"))
         denom.add(Denom("50.000", "50"))
         denom.add(Denom("100.000", "100"))
-        denom.add(Denom("150.000", "150"))
         denom.add(Denom("200.000", "200"))
         denom.add(Denom("300.000", "300"))
         denom.add(Denom("500.000", "500"))
