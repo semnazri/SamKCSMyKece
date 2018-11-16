@@ -23,19 +23,19 @@ class DaftarHargaAdapter(val mValues: List<DaftarHarga>, val mContext: Context) 
 
     override fun onBindViewHolder(holder: DaftarHargaViewHolder, position: Int) {
 
-        if (mValues[position].fiturNama!!.contains("SMARTFREN")) {
+        if (mValues[position].fiturNama!!.toLowerCase().contains("smartfren")) {
             holder?.llparent.setBackgroundResource(R.drawable.smartfren_background)
-        } else if (mValues[position].fiturNama!!.contains("THREE")) {
+        } else if (mValues[position].fiturNama!!.toLowerCase().contains("three")) {
             holder?.llparent.setBackgroundResource(R.drawable.three_background)
 
-        } else if (mValues[position].fiturNama!!.contains("Telkomsel")) {
+        } else if (mValues[position].fiturNama!!.toLowerCase().contains("telkomsel") || mValues[position].fiturNama!!.toLowerCase().contains("as")) {
             holder?.llparent.setBackgroundResource(R.drawable.telkomsel_background)
 
-        } else if (mValues[position].fiturNama!!.contains("Indosat")) {
+        } else if (mValues[position].fiturNama!!.toLowerCase().contains("indosat")) {
             holder?.llparent.setBackgroundResource(R.drawable.indosat_background)
 
-        } else if (mValues[position].fiturNama!!.contains("iNDOSAT")) {
-            holder?.llparent.setBackgroundResource(R.drawable.indosat_background)
+        } else {
+            holder?.llparent.setBackgroundResource(R.drawable.kcs_background)
 
         }
 
