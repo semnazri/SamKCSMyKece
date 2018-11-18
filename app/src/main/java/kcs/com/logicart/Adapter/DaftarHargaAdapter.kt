@@ -1,6 +1,7 @@
 package kcs.com.logicart.Adapter
 
 import android.content.Context
+import android.graphics.Color
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -28,10 +29,17 @@ class DaftarHargaAdapter(val mValues: List<DaftarHarga>, val mContext: Context) 
         } else if (mValues[position].fiturNama!!.toLowerCase().contains("three")) {
             holder?.llparent.setBackgroundResource(R.drawable.three_background)
 
-        } else if (mValues[position].fiturNama!!.toLowerCase().contains("telkomsel") || mValues[position].fiturNama!!.toLowerCase().contains("as")) {
+        } else if (mValues[position].fiturNama!!.toLowerCase().contains("axis")) {
+            holder?.llparent.setBackgroundResource(R.drawable.axis_background)
+
+        } else if (mValues[position].fiturNama!!.toLowerCase().contains("xl")) {
+            holder?.llparent.setBackgroundResource(R.drawable.xl_background)
+//            holder?.title.setTextColor(Color.parseColor("#000000"))
+
+        } else if (mValues[position].fiturNama!!.toLowerCase().contains("telkomsel") || mValues[position].fiturNama!!.toLowerCase().contains("as") || mValues[position].fiturNama!!.toLowerCase().contains("simpati")) {
             holder?.llparent.setBackgroundResource(R.drawable.telkomsel_background)
 
-        } else if (mValues[position].fiturNama!!.toLowerCase().contains("indosat")) {
+        } else if (mValues[position].fiturNama!!.toLowerCase().contains("indosat") || mValues[position].fiturNama!!.toLowerCase().contains("im3")) {
             holder?.llparent.setBackgroundResource(R.drawable.indosat_background)
 
         } else {
