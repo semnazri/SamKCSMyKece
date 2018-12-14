@@ -120,6 +120,9 @@ class TransaksiHarianActivity : AppCompatActivity(), TransaksiHarianView {
         } else if (bulan.contains("December")) {
             month_final = bulan.replace("December", "Desember")
         }
+        else{
+            month_final = bulan
+        }
 
         //        txt_date.setText(sdf.format(myCalendar.getTime()));
         txt_date.text = "$tanggal - $month_final - $tahun"
