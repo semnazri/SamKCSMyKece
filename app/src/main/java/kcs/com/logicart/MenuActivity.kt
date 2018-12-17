@@ -4,12 +4,14 @@ import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.content.pm.PackageManager
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
@@ -31,6 +33,7 @@ import kcs.com.logicart.View.CekSaldoView
 import kcs.com.logicart.View.TransaksiPulsaView
 import kotlinx.android.synthetic.main.activity_menu.*
 import kotlinx.android.synthetic.main.dialog_transaksi_pulsa.*
+import kotlinx.android.synthetic.main.footer.*
 import java.util.*
 
 
@@ -47,6 +50,7 @@ class MenuActivity : AppCompatActivity(), CekSaldoView, TransaksiPulsaView {
     val PREFS_PRIVATE = "PREFS_PRIVATE"
     val denom: ArrayList<Denom> = ArrayList()
     var str_denom: String = ""
+    var versionCode: String = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,6 +61,12 @@ class MenuActivity : AppCompatActivity(), CekSaldoView, TransaksiPulsaView {
         cd = ConnectionDetector(this)
         cekSaldoPresenter = CekSaldoPresenterImp(this)
         transaksiPulsaPresenter = TransaksiPulsaPresenterImp(this)
+        getVersion()
+
+        panduan_topup.setOnClickListener {
+            val intent = Intent(this, PanduanTopupActivity::class.java)
+            startActivity(intent)
+        }
 
         btn_cek_saldo.setOnClickListener {
             checkConnection("1", "0", "00")
@@ -152,6 +162,19 @@ class MenuActivity : AppCompatActivity(), CekSaldoView, TransaksiPulsaView {
 
             builder.show()
         }
+
+    }
+
+    fun getVersion(){
+        try {
+            val packageInfo = packageManager.getPackageInfo(packageName, 0)
+            versionCode = packageInfo.versionName.toString()
+            Log.d("masuk", versionCode)
+        } catch (e: PackageManager.NameNotFoundException) {
+            e.printStackTrace()
+        }
+
+        version_code.setText("Version " + versionCode)
 
     }
 

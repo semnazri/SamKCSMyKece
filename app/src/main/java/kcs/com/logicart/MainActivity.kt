@@ -3,8 +3,10 @@ package kcs.com.logicart
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.widget.Toast
 import com.afollestad.materialdialogs.MaterialDialog
 import kcs.com.logicart.JSON.UserAuth
@@ -13,6 +15,8 @@ import kcs.com.logicart.Presenter.CekSaldoPresenter
 import kcs.com.logicart.Presenter.CekSaldoPresenterImp
 import kcs.com.logicart.View.CekSaldoView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.footer.*
+
 
 class MainActivity : AppCompatActivity(), CekSaldoView {
 
@@ -23,6 +27,7 @@ class MainActivity : AppCompatActivity(), CekSaldoView {
     var username: String = ""
     var password: String = ""
     var kodeagen: String = ""
+    var versionCode: String = ""
     fun Context.toast(message: CharSequence) =
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 
@@ -37,6 +42,7 @@ class MainActivity : AppCompatActivity(), CekSaldoView {
         val pwd = prefsprivate!!.getString("PASSWORD", "")
         val kodeagens = prefsprivate!!.getString("KODEAGENT", "")
 
+        getVersion()
         if (!kodeagens.equals("")) {
             to_menuActivity()
         }
@@ -61,6 +67,21 @@ class MainActivity : AppCompatActivity(), CekSaldoView {
 
 
         }
+
+
+    }
+
+    fun getVersion(){
+        try {
+            val packageInfo = packageManager.getPackageInfo(packageName, 0)
+            versionCode = packageInfo.versionName.toString()
+            Log.d("masuk", versionCode)
+        } catch (e: PackageManager.NameNotFoundException) {
+            e.printStackTrace()
+        }
+
+        version_code.setText("Version " + versionCode)
+
     }
 
     fun to_menuActivity() {

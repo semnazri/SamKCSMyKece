@@ -24,6 +24,7 @@
         <activity android:name=".ForgotPassActivity"/>
         <activity android:name=".DaftarHargaActivity"/>
         <activity android:name=".TransaksiHarianActivity"/>
+        <activity android:name=".PanduanTopupActivity"/>
     </application>
 
 </manifest>

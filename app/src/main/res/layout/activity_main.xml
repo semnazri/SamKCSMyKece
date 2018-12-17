@@ -152,8 +152,8 @@
                 android:textColor="#ffffff" />
         </LinearLayout>
 
-
     </LinearLayout>
 
 
+    <include layout="@layout/footer" />
 </android.support.design.widget.CoordinatorLayout>

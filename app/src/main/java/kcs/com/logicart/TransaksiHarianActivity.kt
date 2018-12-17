@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
+import android.widget.Toast
 import com.afollestad.materialdialogs.MaterialDialog
 import kcs.com.logicart.Adapter.DailyTransactionAdapter
 import kcs.com.logicart.JSON.DailyTransaction
@@ -175,6 +176,15 @@ class TransaksiHarianActivity : AppCompatActivity(), TransaksiHarianView {
 
     override fun ResultTransaksiHarian(response_message: String, daftarTransaksi: List<DaftarTransaksi>) {
         dialog_muter!!.dismiss()
-        rv_transaksi.adapter = DailyTransactionAdapter(daftarTransaksi, this)
+
+        if (daftarTransaksi.size != 0){
+            rv_transaksi.visibility = View.VISIBLE
+            txt_nodata.visibility = View.GONE
+            rv_transaksi.adapter = DailyTransactionAdapter(daftarTransaksi, this)
+
+        }else{
+            rv_transaksi.visibility = View.GONE
+            txt_nodata.visibility = View.VISIBLE
+        }
     }
 }

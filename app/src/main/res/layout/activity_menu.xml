@@ -12,7 +12,18 @@
         android:layout_gravity="center"
         android:orientation="vertical">
 
+     <TextView
+         android:id="@+id/panduan_topup"
+         android:layout_width="wrap_content"
+         android:layout_margin="10dp"
+         android:layout_gravity="end"
+         android:text="@string/panduan_txt"
+         android:textStyle="italic"
+         android:textColor="@color/white"
+         android:layout_height="wrap_content" />
+
         <LinearLayout
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -89,5 +100,5 @@
             android:text="Logout"
             android:textColor="#ffffff" />
     </LinearLayout>
-
+    <include layout="@layout/footer" />
 </android.support.design.widget.CoordinatorLayout>

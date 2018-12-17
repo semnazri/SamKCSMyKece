@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">KCS Mobile</string>
     <string name="please_wait">Please Wait</string>
+    <string name="rek_bni">PT. KARYA CITRA SENTOSA \n2106 2106 52</string>
+    <string name="rek_bca">KEVIN CHRISTIE MAMAHIT \n549 005 2161</string>
+    <string name="rek_mandiri">KEVIN CHRISTIE MAMAHIT \n102 000 510 9258</string>
+    <string name="panduan_topup">Bagi mitra KCS yang ingin melakukan Top Up Saldo,\ndapat melakukan Deposit melalui Rekening :</string>
+    <string name="panduan_konfirmasi">Setelah melakukan deposit, anda dapat melakukan konfirmasi ke nomer dibawah ini melalui Whatsapp serta lampirkan bukti Deposit :</string>
+    <string name="wa_anang">Anang Hardiman\n0813-1890-9458</string>
+    <string name="wa_adang">Adang\n0819-0555-0410</string>
+    <string name="panduan_txt"><u>Panduan Top Up Saldo</u></string>
+    <string name="tidak_adatransaksi">Tidak ada Transaksi pada tanggal ini</string>
+    <string name="powered">Copyright &#169;  Semmy Nazri 2018</string>
 </resources>
